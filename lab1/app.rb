@@ -1,8 +1,6 @@
 require 'rubygems'
-require 'sanitize'
 
 file_contents = File.read('todo.txt')
-file_contents = Sanitize.clean(file_contents) 
 
 lines = file_contents.split("\n")
 
