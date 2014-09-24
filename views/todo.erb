@@ -1,16 +1,13 @@
-<p>
-<a href="/">&laquo; Back</a>
-</p>
+<p><a href="/">&laquo; Back</a></p>
+<link rel='stylesheet' type='text/css' href='style.css'>
 <h1>ToDo List</h1>
-<p>Hai, see todo list now</p>
-<p>
-    <%= file_contents = File.read('todo.txt') 
-     lines = file_contents.split("\n") 
-     lines.each do |line| 
-         thing, date = line.split("-") 
-         puts "ToDo - #{date} #{thing}" 
-         puts "\n" 
-     end 
-    %>
+<p>Hi, see todo list now</p>
+<ul>
+    <% @things.each do |thing, date| %>
+        <li>
+        <%= thing %>
+        <% unless blank? date %> <em> - <%= date %></em><% end %> 
+        </li>
+    <% end %>
+</ul>
 
-</p>

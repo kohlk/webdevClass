@@ -1,7 +1,13 @@
-<h1>Hello, World!</h1>
+<h1>Hello, Quinn</h1>
 <p>You are about to see a sweet ToDo list. Prepare yourself!</p>
-<p>Here is some example dynamic content: <em><%= Time.now.to_s %></em></p>
+<p>Current time: <em><%= Time.now.to_s %></em></p>
 <a href="/todo">ToDo list</a>
+<p>
+<form action='/' method='POST'>
+    <strong>New Item:</strong>
+    <input type='text' name='thing' placeholder='thing content' />
+    <input type='text' name='date' placeholder='due date' />
+    <input type='submit' value='Save'>
+</form>
+</p>
 
-<p><em><%=     %></em></p>
-<%#<p>You can see an example of using a loop in an ERB file at <a href="/99bottles">/99bottles</a></p>%>
