@@ -16,7 +16,7 @@ post '/' do
             file.puts "#{params[:thing]}"
         end
     end
-    redirect '/'
+    redirect '/todo'
 end
 
 get '/todo' do
