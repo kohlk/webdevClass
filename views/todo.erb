@@ -1,11 +1,23 @@
-<link rel='stylesheet' type='text/css' href='style.css'>
-<p><a href="/">&laquo; Back</a></p>
-<h1>ToDo List</h1>
-<p>Hi, see todo list now</p>
-    <% @things.each do |thing, date| %>
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8' />
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel='stylesheet' type='text/css' href='style.css'>
+</head>
+<body>
+    <div class='main'>
+        <h1>ToDo List</h1>
+        <% @things.each do |thing, date| %>
         <li>
-        <%= thing %>
-        <% unless blank? date %> <em> - <%= date %></em><% end %> 
+            <%= thing %>
+            <% unless blank? date %> <em> - <%= date %></em><% end %>
         </li>
-    <% end %>
-
+        <% end %>
+    <p><a href="/">&laquo; Back</a></p>
+    </div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
+</html>
