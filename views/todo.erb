@@ -8,14 +8,18 @@
 </head>
 <body>
     <div class='main'>
-        <h1>ToDo List</h1>
-        <% @things.each do |thing, date| %>
-        <li>
-            <%= thing %>
-            <% unless blank? date %> <em> - <%= date %></em><% end %>
-        </li>
+    <div class="col-md-6 col-md-offset-3">
+        <ul>
+            <h1>ToDo List</h1>
+            <% @things.each do |thing, date| %>
+            <li>
+                <%= thing %>
+                <% unless blank? date %> <em> - <%= date %></em><% end %>
+            </li>
         <% end %>
-    <p><a href="/">&laquo; Back</a></p>
+        <p><a href="/">&laquo; Back</a></p>
+        </ul>
+    </div>
     </div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
