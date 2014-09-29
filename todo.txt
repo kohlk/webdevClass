@@ -9,3 +9,4 @@ Push commits to github - 9/25
 Eat ice cream - ASAP
 Eat nacho cheese - 9/27
 finish styling - 9/28
+change font for lab 3 - 9/30

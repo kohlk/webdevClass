@@ -3,7 +3,7 @@
       +}
    
    body {
-       -    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; /* set the font */
+       -    font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif; 
        -    font-size: 16px; /* set the base font size. This also sets the value of a rem unit */
        -    color: #425669; /* set the text color */
        +    min-height: 100%;
