@@ -11,14 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema.define(version: 20141016193706) do
 
-# db/migrate/20141001173512_create_todo_items.rb
-class CreateTodoItems < ActiveRecord::Migration
-    def change
-        create_table :todo_items do |t|
-            t.string :description
-            t.datetime :due
-        end
-    end
+  create_table "todo_items", force: true do |t|
+    t.string   "description"
+    t.datetime "due"
+  end
+
 end
-

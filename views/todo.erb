@@ -11,11 +11,13 @@
     <div class="col-md-6 col-md-offset-3">
         <ul>
             <h1>ToDo List</h1>
-            <% @things.each do |thing, date| %>
-            <li>
-                <%= thing %>
-                <% unless blank? date %> <em> - <%= date %></em><% end %>
-            </li>
+            <div class="list-group">
+                <% @things.each do |thing| %>
+                <div class="list-group-item">
+                    <%= thing.description %>
+                    <% unless blank? thing.due %> <em> - <%= thing.due %></em><% end %>
+                </div>
+            </div>
         <% end %>
         <p><a href="/">&laquo; Back</a></p>
         </ul>

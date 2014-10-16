@@ -3,31 +3,28 @@ require 'bundler/setup'
 
 Bundler.require
 
+require './models/TodoItem'
+
+ActiveRecord::Base.establish_connection(
+    :adapter  => 'sqlite3',
+    :database => 'db/development.db',
+    :encoding => 'utf8'
+)
+
 get '/' do
     erb :index
 end
 
 #post section sourced from qrohlf
-post '/' do         
-    File.open("todo.txt", "a") do |file|
-        unless blank? params[:date]
-            file.puts "#{params[:thing]} - #{params[:date]}" 
-        else
-            file.puts "#{params[:thing]}"
-        end
-    end
-    redirect '/todo'
+post '/' do  
+    TodoItem.create(description: params[:thing], due: params[:date])
+    redirect '/todo'   
 end
 
-get '/todo' do
-    file_contents = File.read("todo.txt")
-    lines = file_contents.split("\n") 
-    @things = []                  #@task from qrohlf's example
-    lines.each do |line| 
-        thing, date = line.split("-") 
-        @things << [thing, date]
-    end 
-    erb :todo
+get '/delete/:id' do
+    TodoItem.find(params[:id]).destroy
+    redirect '/todo'
+    
 end
 
 helpers do
