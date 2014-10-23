@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'bundler/setup'
+require 'pry'
 
 Bundler.require
 
@@ -12,7 +13,6 @@ ActiveRecord::Base.establish_connection(
 )
 
 get '/' do
-    @things = TodoItem.all.order(:due) # @things is an instance variable
     erb :index
 end
 
@@ -21,6 +21,16 @@ post '/' do
     TodoItem.create(description: params[:thing], due: params[:date])
     redirect '/todo'   
 end
+
+get '/todo' do
+    @things = TodoItem.all.order(:due) # @things is an instance variable
+    erb :todo
+end
+
+#get '/delete/:id' do
+#    TodoItem.find(params[:id]).destroy
+#end
+
 
 helpers do
     def blank?(x)

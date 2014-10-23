@@ -2,26 +2,31 @@
 <html lang="en">
 <head>
     <meta charset='UTF-8' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ToDo List</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel='stylesheet' type='text/css' href='style.css'>
 </head>
 <body>
-    <div class='main'>
-    <div class="col-md-6 col-md-offset-3">
-        <ul>
-            <h1>ToDo List</h1>
-            <div class="list-group">
-                <% @things.each do |thing| %>
-                <div class="list-group-item">
-                    <%= thing.description %>
-                    <% unless blank? thing.due %> <em><%= thing.due %></em><% end %>
-                </div>
+    <div class='container'>
+        <div class='row'>
+            <div class="col-md-6 col-md-offset-3">
+                <h1>ToDo List</h1>
+                <ul>
+                    <div class="list-group">
+                        <% @things.each do |thing| %>
+                        <div class="list-group-item">
+                            <%= thing.description %>
+                            <% unless blank? thing.due %> - 
+                                <%= thing.due %>
+                            <% end %>
+                        </div>
+                        <% end %>
+                    </div>
+                </ul>
+            <p><a href="/">&laquo; Back</a></p>
             </div>
-        <% end %>
-        <p><a href="/">&laquo; Back</a></p>
-        </ul>
-    </div>
+        </div>
     </div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>

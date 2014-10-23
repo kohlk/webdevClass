@@ -17,7 +17,11 @@
             -   border-radius: 5px; /* round the corners of main by 4 pixels */
             -   background-color: rgba(101,52,101,0.6);; /* set the background color of main */
             -}
+        -.text-center {
+              text-align: center;
+          }
         +h1 {
             +   color: #FFF;
-            +}
+            +
+            }
 
