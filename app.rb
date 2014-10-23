@@ -12,6 +12,7 @@ ActiveRecord::Base.establish_connection(
 )
 
 get '/' do
+    @things = TodoItem.all.order(:due) # @things is an instance variable
     erb :index
 end
 
@@ -19,12 +20,6 @@ end
 post '/' do  
     TodoItem.create(description: params[:thing], due: params[:date])
     redirect '/todo'   
-end
-
-get '/delete/:id' do
-    TodoItem.find(params[:id]).destroy
-    redirect '/todo'
-    
 end
 
 helpers do

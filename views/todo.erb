@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 <head>
     <meta charset='UTF-8' />
     <title>ToDo List</title>
@@ -15,7 +15,7 @@
                 <% @things.each do |thing| %>
                 <div class="list-group-item">
                     <%= thing.description %>
-                    <% unless blank? thing.due %> <em> - <%= thing.due %></em><% end %>
+                    <% unless blank? thing.due %> <em><%= thing.due %></em><% end %>
                 </div>
             </div>
         <% end %>
