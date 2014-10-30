@@ -3,7 +3,7 @@ require 'bundler/setup'
 
 Bundler.require
 
-require './models/TodoItem.rb'
+require './models/TodoItem'
 
 if ENV['DATABASE_URL']
     ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
