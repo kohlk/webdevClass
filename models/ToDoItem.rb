@@ -7,3 +7,6 @@ else
         :encoding => 'utf8'
     )
 end
+class TodoItem < ActiveRecord::Base
+
+end
