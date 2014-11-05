@@ -30,9 +30,10 @@ get '/todo' do
     erb :todo
 end
 
-#get '/delete/:id' do
-#    TodoItem.find(params[:id]).destroy
-#end
+get '/delete/:id' do
+    TodoItem.find(params[:id]).destroy
+    redirect '/todo'
+end
 
 
 helpers do

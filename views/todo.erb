@@ -16,6 +16,7 @@
                     <div class="list-group">
                         <% @things.each do |thing| %>
                         <div class="list-group-item">
+                            <a href='/delete/<%= thing.id %>' class="btn-primary btn-danger btn-xs"><span class="glyphicon glyphicon-ok"> </span></a>
                             <%= thing.description %>
                             <% unless blank? thing.due %> - 
                                 <%= thing.due %>
