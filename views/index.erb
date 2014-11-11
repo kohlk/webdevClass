@@ -14,7 +14,7 @@
             <h1> <%= @user.name %>'s ToDo List</h1>
                 <div class="panel">
                     <div class="panel-body">
-                        <h4 class="list-group-item-heading">New Item:</h4>
+                        <h4 class="list-group-item-heading">New Thing:</h4>
                         <form class="form-inline" action='/<%= @user.id %>/new_item' method='POST'>
                             <div class="form-group">
                                 <input class="form-control" type='text' name='thing' placeholder='thing content' />
