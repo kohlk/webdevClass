@@ -21,20 +21,17 @@ get '/' do
     erb :userList
 end
 
-#
 get '/:user' do
     @user = User.find(params[:user])
     @tasks = @user.todo_items.order(:due)
     erb :index
 end
 
-#
 post '/new_user' do
       @user = User.create(params)
         redirect '/'
 end
 
-#
 get '/delete_user/:user' do
       User.find(params[:user]).destroy
         redirect '/'
@@ -45,34 +42,12 @@ post '/:user/new_item' do
         redirect "/todo/#{params[:user]}"
 end
 
-# since task ids are
 get '/delete_item/:item' do
     @todo_item = TodoItem.find(params[:item])
     @user = @todo_item.user
     @todo_item.destroy
-    redirect "/#{@user.id}"
+    redirect "/todo/#{@user.id}"
 end
-
-
-
-
-
-
-#post '/' do  
-#    TodoItem.create(description: params[:thing], due: params[:date])
-#    redirect '/todo'   
-#end
-
-#get '/todo' do
-#    @things = TodoItem.all.order(:due) # @things is an instance variable
-#    erb :todo
-#end
-
-#get '/delete/:id' do
-#    TodoItem.find(params[:id]).destroy
-#    redirect '/todo'
-#end
-
 
 helpers do
     def blank?(x)
