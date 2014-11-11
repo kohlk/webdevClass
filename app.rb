@@ -39,14 +39,14 @@ end
 
 post '/:user/new_item' do
       User.find(params[:user]).todo_items.create(description: params[:task], due: params[:date])
-        redirect "/#{params[:user]}"
+        redirect "/todo/#{params[:user]}"
 end
 
 get '/delete_item/:item' do
     @todo_item = TodoItem.find(params[:item])
     @user = @todo_item.user
     @todo_item.destroy
-    redirect "/#{@user.id}"
+    redirect "/todo/#{@user.id}"
 end
 
 helpers do
