@@ -24,7 +24,7 @@ end
 get '/:user' do
     @user = User.find(params[:user])
     @tasks = @user.todo_items.order(:due)
-    erb :index
+    erb :todoList
 end
 
 post '/new_user' do
