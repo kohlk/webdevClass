@@ -1,10 +1,11 @@
-ruby "2.1.1"
+ruby "2.1.4"
 source 'https://rubygems.org'
 gem 'sinatra', '>= 1.4.5'
 gem 'activerecord', '4.0.4'
 gem 'sinatra-activerecord', require: 'sinatra/activerecord'
 gem 'rake'
 gem 'tux'
+gem 'imgur-api', require: 'imgur'
 
 group :development do
   gem 'sqlite3', '>= 1.3.9'
